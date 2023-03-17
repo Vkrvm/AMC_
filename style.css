@@ -40,7 +40,6 @@
   
   .wrapper {
     width: 100%;
-    height: 100vh;
   }
   
   .wrapper,
@@ -134,146 +133,107 @@
     transform: translate(0) scale(1.2);
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   /* Actual CodePen code */
 #AboutArticle {
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 188vh;
+  width: 100%;
   background-color: var(--Surface);
   z-index: 1;
   padding: 20px;
   margin: 20px 0px;
-  border-radius: 5px;
+  height: 25rem;
 }
-
-#AboutArticle:hover > #About img{
-  right:0;
-}
-
-#AboutArticle:hover > #About #AboutMe { 
-  display:none;
-  transition: all .4s ease;
-}
-
-#AboutArticle:hover > #About #AboutInfo {
-  width: 150vh;
-  transition: all .4s ease;
-}
-
-#About {
+#About{
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: space-around;
   width: 100%;
-  padding: 0;
-  margin: 0;
   overflow-x: hidden;
+  height: 100%;
 }
+#img-div{
+  position: relative;
+  flex-basis: 40%;
+  height: 100%;
+  align-items: center;
 
+}
 #About img {
   position: relative;
-  top:0;
-  left:0;
   border-radius: 5px;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
   transition: all .4s ease;
-  width: 25%;
-  height: auto;
+  height: 100%;
 }
 
+#AboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  color:white;
+  overflow: hidden;
+  transition: .4s;
+  text-align: center;
+}
 #AboutMe h1 {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 700;
-  color: #ffffff;
+}
+#AboutMe p {
+  font-size: 1.5rem;
+  text-align: center;
+  
   
 }
 
-
-#AboutMe {
-  overflow: hidden;
-  position: absolute;
-  width: 40%;
-  min-height: 300px;
-  max-height: 300px;
-  right: 0;
-  transition: all .4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  text-align: center;
-  height:100%;
-}
-
-#AboutInfoText span h1 {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-
-
-#AboutInfoText span h3 {
-  letter-spacing: 0.5px;
-  font-size: 18px;
- 
-}
-
-
-
-#AboutInfo {
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  width: 0;
-  min-height: 300px;
-  max-height: 300px;
-  padding: 0;
-  margin: 0;
-  right: 0;
-  transition: all .6s ease;
-}
-
-#AboutInfo #AboutInfoText span > *{
-  display: inline-block;
-  text-decoration: none;
-  color: var(--OnBackground);
-  padding: 0;
-  margin: 0;
-}
-
-#AboutInfo #AboutInfoText {
-  position: absolute;
-  overflow: hidden;
-  left: 0;
+#AboutInfoText{
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  column-gap: 0px;
-  row-gap: 0px;
-  min-width: 555px;
-  max-width: 555px;
-  min-height: 300px;
-  max-height: 300px;
 }
+#AboutInfoText h1 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+#AboutInfoText h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+ 
+}
+#AboutInfoText h3 span{
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+#AboutInfoText h3 span a{
+  color: white;
+  text-decoration: none;
+}
+#AboutInfo {
+  display: none;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  flex-basis: 60%;
+  transition:all .6s ease;
+}
+/* ----------------------------START Hovering handle------------------------ */
+@media (min-width:710px){
+
+#AboutArticle:hover > #About #AboutMe { 
+  display:none;
+}
+
+#AboutArticle:hover > #About #AboutInfo { 
+  display:block;
+}
+}
+/* ----------------------------END Hovering handle------------------------ */
 
 #InfoIcons .LinkIcons {
   color: var(--Secondary) !important;
@@ -375,14 +335,15 @@ color: #17c0eb
 .box ul{
   text-align: right;
   margin-top: 8px;
-  font-size: 16px;
-  font-weight: bolder;
+  font-size:  1rem;
+  font-weight: bold;
 }
 .box .name_job{
-  margin: 10px 0 3px 0;
   color: #000000;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 1.3rem;
+
 }
 
 
@@ -443,47 +404,38 @@ height: 638px;
   overflow: hidden;
   position: relative;
   display: block;
-  height: 638px;
+  min-height: 100%;
   
  
   }
-/*end of block 2*/
+.single-serviecs-block2 ul{
+  direction: rtl;
+  font-size: 1rem;
+  text-align: right;
+  font-weight: bold;
+}
 
-
-
-
-
-
-.single-serviecs-block1 h3  {
-color: #333333;
-margin-bottom: 15px;
-margin-top: 80px;
-display: block;
-overflow: hidden;
-transition: 0.5s;
-font-weight: bolder;
-
+.single-serviecs-block2 ul ul{
+  margin-top: 1.1rem;
+}
+.single-serviecs-block2 ul li {
+  margin-bottom: 1.1rem;
 }
 
 
 
 .single-serviecs-block2 h3  {
   color: #333333;
-  margin-bottom: 15px;
-  margin-top: 80px;
+  margin-top: 5rem;
   display: block;
   overflow: hidden;
   transition: 0.5s;
   font-weight: bolder;
+  margin-bottom: 2rem;
   
   }
 
-
-
-
-
-
-.single-serviecs-block1 i {
+.single-serviecs-block2 i {
 color: #fff;
 font-size: 50px;
 height: 140px;
@@ -498,11 +450,6 @@ left: 50%;
 transform: translateX(-50%);
 transition: 0.6s;
 }
-
-
-
-
-
 .single-serviecs-block2 img {
   color: #fff;
   font-size: 10px;
@@ -519,7 +466,7 @@ transition: 0.6s;
   transition: 0.6s;
   }
 
-
+/*end of block 2*/
 
   /*@media*/
  
@@ -595,7 +542,22 @@ section.contact-area {
   margin: auto;
   align-content: center;
 }
-
+.sub-title{
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sub-title :after{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--sec-color);
+}
 
 /*@media*/
 
@@ -606,14 +568,31 @@ section.contact-area {
     margin-bottom: 20px;
   }
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 710px){
   .container .box{
     width: 100%;
   }
 }
 @media (max-width:710px){
-  .container .box{
-    width: 100%;
+
+}
+@media (max-width:710px){
+  #AboutArticle:hover  { 
+    display:block
+  }
+  #AboutMe p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  #About{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  #AboutMe h1{
+    font-size: 1.5rem;
+  }
+  #AboutArticle{
+    height:fit-content;
   }
 }
 @media (max-width:450px) {
@@ -642,9 +621,11 @@ section.contact-area {
     height: auto;
     }
 }
+
 @media(max-width:450px){
   .body{
     overflow-x: hidden;
   }
 
 }
+
